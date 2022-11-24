@@ -47,6 +47,9 @@ extern "C"{
  /* Roger clark. Replaced with line below #include <series/usart.h>*/
 #include "stm32f1/include/series/usart.h"
 
+// Add dma rx method
+#define DMA_RX_SUPPORT
+
 /*
  * Register map (common across supported STM32 series).
  */
@@ -378,11 +381,11 @@ typedef struct usart_reg_map {
  */
 
 #ifndef USART_RX_BUF_SIZE
-#define USART_RX_BUF_SIZE               64
+#define USART_RX_BUF_SIZE               1024
 #endif
 
 #ifndef USART_TX_BUF_SIZE
-#define USART_TX_BUF_SIZE               64
+#define USART_TX_BUF_SIZE               512
 #endif
 
 /** USART device type */

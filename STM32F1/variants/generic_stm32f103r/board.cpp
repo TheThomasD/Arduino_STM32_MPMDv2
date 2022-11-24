@@ -106,7 +106,7 @@ extern const stm32_pin_info PIN_MAP[BOARD_NR_GPIO_PINS] = {
     {&gpiob, &timer4, NULL,  6, 1, ADCx}, /* PB6 */
     {&gpiob, &timer4, NULL,  7, 2, ADCx}, /* PB7 */
     {&gpiob, &timer4, NULL,  8, 3, ADCx}, /* PB8 */
-	{&gpiob,   NULL, NULL,  9, 0, ADCx}, /* PB9 */
+	{&gpiob, &timer4, NULL,  9, 4, ADCx}, /* PB9 */
     {&gpiob,   NULL, NULL, 10, 0, ADCx}, /* PB10 */
     {&gpiob,   NULL, NULL, 11, 0, ADCx}, /* PB11 */
     {&gpiob,   NULL, NULL, 12, 0, ADCx}, /* PB12 */

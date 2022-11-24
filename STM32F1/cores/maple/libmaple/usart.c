@@ -58,7 +58,11 @@ void usart_init(usart_dev *dev) {
  */
 void usart_enable(usart_dev *dev) {
     usart_reg_map *regs = dev->regs;
+#ifdef DMA_RX_SUPPORT
+    regs->CR1 |= (USART_CR1_TE | USART_CR1_RE | USART_CR1_IDLEIE);
+#else
     regs->CR1 |= (USART_CR1_TE | USART_CR1_RE | USART_CR1_RXNEIE);// don't change the word length etc, and 'or' in the patten not overwrite |USART_CR1_M_8N1);
+#endif
     regs->CR1 |= USART_CR1_UE;
 }
 
